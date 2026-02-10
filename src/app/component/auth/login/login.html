@@ -1,0 +1,27 @@
+<div class="card">
+  <h2>Login</h2>
+
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <label>DNI</label>
+    <input type="text" formControlName="username" placeholder="Tu DNI" />
+    <small *ngIf="form.controls.username.touched && form.controls.username.invalid">
+      DNI requerido
+    </small>
+
+    <label class="mt">Contraseña</label>
+    <input type="password" formControlName="password" placeholder="Tu contraseña" />
+    <small *ngIf="form.controls.password.touched && form.controls.password.invalid">
+      Contraseña requerida
+    </small>
+
+    <p class="error" *ngIf="errorMsg">{{ errorMsg }}</p>
+
+    <button type="submit" [disabled]="loading">
+      {{ loading ? 'Ingresando...' : 'Ingresar' }}
+    </button>
+
+    <p class="link">
+      ¿No tienes cuenta? <a routerLink="/register">Regístrate</a>
+    </p>
+  </form>
+</div>

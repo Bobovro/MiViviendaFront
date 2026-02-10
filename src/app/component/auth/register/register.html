@@ -1,0 +1,54 @@
+<div class="card">
+  <h2>Registro</h2>
+
+  <form [formGroup]="form" (ngSubmit)="submit()">
+
+    <label>DNI</label>
+    <input type="text" formControlName="dni" placeholder="Tu DNI" />
+    <small *ngIf="form.get('dni')?.touched && form.get('dni')?.invalid">
+      DNI requerido
+    </small>
+
+    <label>Contraseña</label>
+    <input type="password" formControlName="password" placeholder="Tu contraseña" />
+    <small *ngIf="form.get('password')?.touched && form.get('password')?.invalid">
+      Mínimo 6 caracteres
+    </small>
+
+    <label>Nombres</label>
+    <input type="text" formControlName="nombres" placeholder="Tus nombres" />
+    <small *ngIf="form.get('nombres')?.touched && form.get('nombres')?.invalid">
+      Nombres requeridos
+    </small>
+
+    <label>Apellidos</label>
+    <input type="text" formControlName="apellidos" placeholder="Tus apellidos" />
+    <small *ngIf="form.get('apellidos')?.touched && form.get('apellidos')?.invalid">
+      Apellidos requeridos
+    </small>
+
+    <label>Email</label>
+    <input type="email" formControlName="email" placeholder="correo@ejemplo.com" />
+    <small *ngIf="form.get('email')?.touched && form.get('email')?.invalid">
+      Email inválido
+    </small>
+
+    <label>Teléfono</label>
+    <input type="text" formControlName="telefono" placeholder="Tu teléfono" />
+    <small *ngIf="form.get('telefono')?.touched && form.get('telefono')?.invalid">
+      Teléfono requerido
+    </small>
+
+    <p class="ok" *ngIf="okMsg">{{ okMsg }}</p>
+    <p class="error" *ngIf="errorMsg">{{ errorMsg }}</p>
+
+    <button type="submit" [disabled]="loading">
+      {{ loading ? 'Registrando...' : 'Crear cuenta' }}
+    </button>
+
+    <p class="link">
+      ¿Ya tienes cuenta? <a routerLink="/login">Volver al login</a>
+    </p>
+
+  </form>
+</div>
