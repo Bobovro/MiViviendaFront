@@ -6,7 +6,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "MiViviendaFront": {
+    "CrediVivienda": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -57,10 +57,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "MiViviendaFront:build:production"
+              "buildTarget": "CrediVivienda:build:production"
             },
             "development": {
-              "buildTarget": "MiViviendaFront:build:development"
+              "buildTarget": "CrediVivienda:build:development"
             }
           },
           "defaultConfiguration": "development"
